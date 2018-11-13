@@ -46,7 +46,7 @@
         <div class="jumbotron mt-2">
             <div class="row">
                 <form class="form-group col-md-12" id="formCodigo">
-                    <input class="form-control col-md-6 mr-3 ml-auto" placeholder="Informe o código" name="txtCodigo">
+                    <input class="form-control col-md-6 mr-3 ml-auto" placeholder="Informe o código" name="txtCodigo" pattern="[0-9]" title="Informe apenas números">
                     <button class="btn btn-primary float-right mr-3 mt-2">Inserir</button>
                 </form>
             </div>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="col-md-6">
                         <small class="form-text text-muted">Preço do Produto</small>
-                        <input class="form-control"readonly id="txtPrecoProduto">
+                        <input class="form-control" readonly id="txtPrecoProduto">
                     </div>
                     <div class="col-md-6">
                         <small class="form-text text-muted">Quantidade do Produto</small>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="col-md-6">
                         <small class="form-text text-muted">Preço total</small>
-                        <input class="form-control" id="txtPrecoTotal">
+                        <input class="form-control" readonly id="txtPrecoTotal">
                     </div>
                 </div>
             </div>
@@ -213,7 +213,6 @@ $(document).ready(function(){
 
             });
         })
-
 </script>
 </html>
 
