@@ -52,21 +52,28 @@ $(document).ready(function(){
             preco = $("#txtPrecoProduto").val();
             qtd = $("#txtQtdProduto").val();
             precoTotal = $("#txtPrecoTotal").val();
-             colunas += "<td>"+id+"</td>";
-             colunas += "<td>"+nome+"</td>";
-             colunas += "<td>"+preco+"</td>";
-             colunas += "<td>"+qtd+"</td>";
-             colunas += "<td data-nome='"+precoTotal+"'>"+precoTotal+"</td>";
-             colunas += "<td><button class='btn btn-danger' onclick='removerLinha(this)'>&times;</button></td>";
-             colunas += "</tr>";
-            novaLinha.append(colunas);
-            $("#tabelaProduto").append(novaLinha);
+            if(qtd == 0 || qtd == ""){
+                $("#qtdTexto").hide();
+                $("#erroQtd").show();
+            }else{
+                $("#qtdTexto").show();
+                $("#erroQtd").hide();
+                colunas += "<td>"+id+"</td>";
+                colunas += "<td>"+nome+"</td>";
+                colunas += "<td>"+preco+"</td>";
+                colunas += "<td>"+qtd+"</td>";
+                colunas += "<td data-nome='"+precoTotal+"'>"+precoTotal+"</td>";
+                colunas += "<td><button class='btn btn-danger' onclick='removerLinha(this)'>&times;</button></td>";
+                colunas += "</tr>";
+                novaLinha.append(colunas);
+                $("#tabelaProduto").append(novaLinha);
 
-            //Para realizar o calculo da compra
-            resu = parseFloat(precoTotal);
-            soma = soma+resu;
-            $("#totalCompra").text(soma);
-
+                //Para realizar o calculo da compra
+                resu = parseFloat(precoTotal);
+                soma = soma+resu;
+                $("#totalCompra").text(soma);
+                    
+            }
         });
 
         //Remove a linha em que estiver clicado
@@ -85,6 +92,9 @@ $(document).ready(function(){
             
         }
 
+        $('#modalProduto').on('hidden.bs.modal', function (e) {
+               $("#txtQtdProduto").val(0);
+          })
        
            
         
