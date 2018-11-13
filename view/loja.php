@@ -58,7 +58,7 @@
                         <th scope="col">Nome</th>
                         <th scope="col">Preço unitário</th>
                         <th scope="col" id="qtd">Quantidade</th>
-                        <th scope="col" id="precoTotal">Preço total</th>
+                        <th scope="col" id="precoTotal">Total</th>
                     </tr>
                 </thead>
                 <tbody id="dadosTable">
@@ -182,7 +182,7 @@ $(document).ready(function(){
              colunas += "<td>"+nome+"</td>";
              colunas += "<td>"+preco+"</td>";
              colunas += "<td>"+qtd+"</td>";
-             colunas += "<td>"+precoTotal+"</td>";
+             colunas += "<td data-nome='"+precoTotal+"'>"+precoTotal+"</td>";
              colunas += "<td><button class='btn btn-danger' onclick='removerLinha(this)'>&times;</button></td>";
              colunas += "</tr>";
             novaLinha.append(colunas);
@@ -197,14 +197,23 @@ $(document).ready(function(){
 
         //Remove a linha em que estiver clicado
         function removerLinha(dado){
+            //Pega o valor da linha retirada
+            var valorTirar = $(dado).closest('tr').find('td[data-nome]').data('nome');
+            var tirar = parseFloat(valorTirar);
+            //retira do total da compra
+            soma = soma - valorTirar;
+            $("#totalCompra").text(soma);
+            //Remove a linha
             var linha = $(dado).closest('tr');
-
             linha.fadeOut(500,function(){
                 linha.remove;
             });
             
         }
 
+       
+           
+        
         $("#calcular").click(function(){
             $('#tabelaProduto tbody tr').each(function(){ 
  
