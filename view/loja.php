@@ -11,7 +11,7 @@
     <?php
         include_once '../model/Usuario.php';
         include_once '../model/Produto.php';
-        include_once '../controler/ProdutoDAO.php';
+        include_once '../controler/Loja.php';
         //Inclui cabeçalho
         include_once 'header.php';
         $usu = new Usuario();
@@ -184,7 +184,7 @@ $(document).ready(function(){
 			$("#formCodigo").submit(function(){
 				$.ajax({
 					type: 'post',
-					url: '../controler/ProdutoDAO.php',
+					url: '../controler/Loja.php',
 					data: {
                         id  : $("input[name=txtCodigo]").val(),
 					    op :	1
@@ -264,10 +264,6 @@ $(document).ready(function(){
                $("#txtCodigo").focus();
           });
 
-       
-       
-           
-        
         $("#calcular").click(function(){
             $('#tabelaProduto tbody tr').each(function(){ 
                 var valor = $(this).find("#qtd").text();

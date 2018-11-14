@@ -19,11 +19,6 @@
                   <input type="text" name="txtProduto" id="txtProduto" autofocus required class="form-control" placeholder="Informe o nome do produto" aria-describedby="ajudaProduto">
                   <small id="ajudaProduto" class="text-muted">Informe o nome do produto</small>
                 </div>
-                <div class="col-sm-12 mt-3">
-                    <label for="txtProduto">Quantidade de produtos</label>
-                    <input type="text" class="form-control" name="txtQuantidade" required id="txtQuantidade" placeholder="Informe quantos produtos há" aria-describedby="ajudaQtd">
-                    <small id="ajudaQtd" class="text-muted">Informe a quantidade</small>
-                </div>
 
                 <div class="col-sm-12  mt-3">
                     <label for="txPreco">Preço do produto</label>
@@ -45,6 +40,32 @@
             
         </div>
     </div>
+
+     <div class="modal" tabindex="-1" role="dialog" id="modalProdutoCadastrado">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Produto Cadastrado?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row  justify-content-center align-items-center">
+                        <div class="col-md-12">
+                            <div class="alert alert-success" role="alert" id="cadastrado">
+                                <strong>Cadastrado!</strong> 
+                            </div>
+                            <div class="alert alert-danger" role="alert" id="NaoCadastrado">
+                                <strong>Não Cadastrado!</strong> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
 </body>
 <script src="../js/cadastraProduto.js"></script>
 </html>
