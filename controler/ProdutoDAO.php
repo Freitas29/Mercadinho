@@ -26,8 +26,15 @@ switch ($op) {
         echo json_encode($produto);
         break;
     
-    default:
-        # code...
+    case 2:
+        $nome = $_POST['nome'];
+        //$qtd = $_POST['qtd'];
+        $preco = $_POST['preco'];
+        $categoria = $_POST['categoria'];
+        $p->setNome($nome);
+        $p->setPreco($preco);
+        $p->setCategoria($categoria);
+        $pDAO->inserirProduto($p);
         break;
 }
 class ProdutoDAO{

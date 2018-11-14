@@ -7,10 +7,6 @@ $(document).ready(function(){
 });
 
 
-$("#btnFinalizar").click(function(){
-    alert("e");
-});
-
 //Aqui trata caso ele selecione quantos produtos
 $("#txtQtdProduto").on("keyup",function() {
     var valUnitario = $("#txtPrecoProduto").val();

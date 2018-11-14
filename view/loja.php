@@ -5,8 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Loja</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../libs/bootstrap/dist/css/bootstrap.css"/>
-    <script defer src="https://use.fontawesome.com/releases/v5.4.1/js/all.js" integrity="sha384-L469/ELG4Bg9sDQbl0hvjMq8pOcqFgkSpwhwnslzvVVGpDjYJ6wJJyYjvG3u8XW7" crossorigin="anonymous"></script>
+  
 </head>
 <body>
     <?php
@@ -30,7 +29,7 @@
         <div class="col-md-12">
             <form class="form-inline">
                 <input class="form-control col-md-11" type="search" placeholder="Pesquise por um produto caso não saiba o código" aria-label="Search">
-                <button class="btn btn-outline-primary col-md-1 my-sm-0" type="submit" >Pesquisar</button>
+                <button class="btn btn-outline-primary col-md-1 my-sm-0" type="button">Pesquisar</button>
             </form>
         </div>
     </div>
@@ -132,8 +131,7 @@
 
     
 </body>
-<script src="../libs/jquery/dist/jquery.min.js" ></script>
-<script src="../libs/bootstrap/dist/js/bootstrap.js"></script>
+
 <script src="../js/loja.js"></script>
 
 </html>
