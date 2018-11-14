@@ -18,6 +18,10 @@
         $usu = new Usuario();
         $id =  $_SESSION['login'];
         $nome =  $_SESSION['nome'];
+
+        if(!$id){
+            header("location:../index.php");
+        }
        
     ?>
 
@@ -26,7 +30,7 @@
         <div class="col-md-12">
             <form class="form-inline">
                 <input class="form-control col-md-11" type="search" placeholder="Pesquise por um produto caso não saiba o código" aria-label="Search">
-                <button class="btn btn-outline-primary col-md-1 my-sm-0" type="submit">Pesquisar</button>
+                <button class="btn btn-outline-primary col-md-1 my-sm-0" type="submit" >Pesquisar</button>
             </form>
         </div>
     </div>
@@ -46,7 +50,7 @@
         <div class="jumbotron mt-2">
             <div class="row">
                 <form class="form-group col-md-12" id="formCodigo">
-                    <input class="form-control col-md-6 mr-3 ml-auto" autofocus placeholder="Informe o código" name="txtCodigo" pattern="[0-9]" title="Informe apenas números">
+                    <input class="form-control col-md-6 mr-3 ml-auto" autofocus placeholder="Informe o código" id="txtCodigo" name="txtCodigo" pattern="[0-9]" title="Informe apenas números">
                     <button class="btn btn-primary float-right mr-3 mt-2">Inserir</button>
                 </form>
             </div>
@@ -66,6 +70,9 @@
             </table>
 
             <div class="row">
+            <div class="col-md-6 ml-auto mt-5">
+                    <button class="btn btn-success" type="button" id="btnFinalizar">Finalizar</button>
+                </div>
                 <div class="col-md-4 ml-auto">
                     <div class="card bg-primary text-white text-center p-3">
                     <blockquote class="blockquote">
@@ -74,6 +81,8 @@
                 
                      </div>
                 </div>
+
+               
             </div>
         </div>
     </div>
@@ -105,7 +114,7 @@
                     <div class="col-md-6">
                         <small class="form-text text-muted" id="qtdTexto">Quantidade do Produto</small>
                         <small class="form-text" id="erroQtd" style="display:none;color:red">Selecione uma quantidade</small>
-                        <input class="form-control" id="txtQtdProduto" autofocus>
+                        <input class="form-control" id="txtQtdProduto">
                     </div>
                     <div class="col-md-6">
                         <small class="form-text text-muted">Preço total</small>

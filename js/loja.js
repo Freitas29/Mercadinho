@@ -6,13 +6,17 @@ $(document).ready(function(){
     $('#loading').fadeOut(1000);
 });
 
+
+$("#btnFinalizar").click(function(){
+    alert("e");
+});
+
 //Aqui trata caso ele selecione quantos produtos
 $("#txtQtdProduto").on("keyup",function() {
     var valUnitario = $("#txtPrecoProduto").val();
     var qtd = $("#txtQtdProduto").val();
     $("#txtPrecoTotal").val(valUnitario*qtd);
 })
-
 
 //Função que buscar pelo código e retorna um JSON para alimentar cada campo no modal
 $(document).ready(function(){
@@ -44,6 +48,7 @@ $(document).ready(function(){
 
 
         $("#adicionarProduto").click(function(){
+            
             var novaLinha = $("<tr>");
             var colunas = "";
             var id,nome,preco,qtd,precoTotal;
@@ -94,7 +99,9 @@ $(document).ready(function(){
 
         $('#modalProduto').on('hidden.bs.modal', function (e) {
                $("#txtQtdProduto").val(0);
-          })
+          });
+
+       
        
            
         
@@ -102,7 +109,6 @@ $(document).ready(function(){
             $('#tabelaProduto tbody tr').each(function(){ 
  
                 var valor = $(this).find("#qtd").text();
-               alert(valor);
 
             });
         });
