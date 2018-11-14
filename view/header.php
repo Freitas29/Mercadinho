@@ -16,6 +16,9 @@ session_start();
         <div class="collapse navbar-collapse" id="navbar">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
+                    <a class="nav-link" href="./loja.php">LOJA</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="./cadastraProduto.php">CADASTRAR PRODUTO</a>
                 </li>
             </ul>

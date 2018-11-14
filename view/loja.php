@@ -86,6 +86,36 @@
         </div>
     </div>
 
+    <!-- Para realizar a o pagamento -->
+    <div class="modal" tabindex="-1" role="dialog" id="modalPagamento">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Realizar Pagamento</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body"> 
+                    <div class="row">
+                        <div class="col-md-6">
+                            <small class="form-text text-muted">Dinheiro</small>
+                            <input class="form-control" id="txtDinheiro">
+                        </div>
+                        <div class="col-md-6">
+                            <small class="form-text text-muted">Troco</small>
+                            <input class="form-control" readonly id="txtTroco">
+                        </div>
+
+                        <div class="col-md-2 mt-2">
+                            <button type="button" class="btn btn-primary" id="btnPagar">Pagar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Modal para quando adicionar um produto -->
      <div class="modal" tabindex="-1" role="dialog" id="modalProduto">
         <div class="modal-dialog" role="document">
@@ -246,7 +276,18 @@ $(document).ready(function(){
         });
 
         $("#btnFinalizar").click(function(){
-            alert(soma);
+            if(soma > 0 ){
+               $("#modalPagamento").modal("show");
+               $("#txtDinheiro").focus();
+            }else{
+                alert("Não há produtos");
+            }
+        });
+
+        $("#btnPagar").click(function(){
+            var campo = $("#txtDinheiro").val();
+            var  dinheiro = parseFloat(campo);
+            $("#txtTroco").val(dinheiro-soma);
         });
 </script>
 
