@@ -26,9 +26,8 @@ class ProdutoDAO{
 
     public function pesquisarProduto(Produto $p){
         $c = $p->getCategoria();
-        $i = $p->getId();
         $n = $p->getNome();
-        $sql = "SELECT * FROM produto WHERE nome LIKE '$n%' OR categoria LIKE '$c%' OR id LIKE '$i%'";
+        $sql = "SELECT * FROM produto WHERE nome LIKE '$n%' OR categoria LIKE '$c%'";
         try{
             $this->bd = new Banco();
             $this->conn = $this->bd->conectar();

@@ -12,7 +12,39 @@ $("#txtQtdProduto").on("keyup",function() {
     var valUnitario = $("#txtPrecoProduto").val();
     var qtd = $("#txtQtdProduto").val();
     $("#txtPrecoTotal").val(valUnitario*qtd);
-})
+});
+
+//Barra de busca
+function pesquisar(valor){
+    $.ajax({
+        type: 'post',
+        url: '../controler/Loja.php',
+        data: {
+            dados  : valor,
+            op :	2
+        },success: function(retorno){
+            if(valor.length <= 0){
+                $("#resultadoBusca").hide();
+            }else{
+                var obj = JSON.parse(retorno);
+                $("#lblCodigo").text(obj.id);
+                $("#lblNome").text(obj.nome);
+                $("#lblPreco").text(obj.preco);
+                $("#resultadoBusca").show();    
+            }
+           
+        },
+        error:function(){
+            alert("Não foi possivel enviar");
+        }
+    });
+    return false;
+}
+
+//Quando sai da barra de busca, oculta o campo
+$("#txtPesquisa").on("blur",function(){
+    $("#resultadoBusca").hide();
+});
 
 //Função que buscar pelo código e retorna um JSON para alimentar cada campo no modal
 $(document).ready(function(){
@@ -44,6 +76,7 @@ $(document).ready(function(){
 		});
 
 
+        //Essa função adiciona produtos a tabela
         $("#adicionarProduto").click(function(){
             
             var novaLinha = $("<tr>");
@@ -124,3 +157,4 @@ $(document).ready(function(){
             }
             
         });
+

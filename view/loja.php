@@ -10,8 +10,6 @@
 <body>
     <?php
         include_once '../model/Usuario.php';
-        include_once '../model/Produto.php';
-        include_once '../controler/Loja.php';
         //Inclui cabeçalho
         include_once 'header.php';
         $usu = new Usuario();
@@ -24,13 +22,20 @@
        
     ?>
 
+    
+
     <!-- Barra de pesquisar -->
     <div class="row">
         <div class="col-md-12">
-            <form class="form-inline">
-                <input class="form-control col-md-11" type="search" placeholder="Pesquise por um produto caso não saiba o código" aria-label="Search">
-                <button class="btn btn-outline-primary col-md-1 my-sm-0" type="button">Pesquisar</button>
-            </form>
+            <div class="form-inline">
+                <input class="form-control col-md-12" id="txtPesquisa" type="search" placeholder="Pesquise por um produto caso não saiba o código" aria-label="Search" onkeyup="pesquisar(this.value)">
+            </div>
+
+            <div class="alert alert-ligh" role="alert" style="text-align:center;display:none;" id="resultadoBusca">
+                Código: <label id="lblCodigo"></label><br>
+                Nome: <label id="lblNome"></label><br>
+                Preço: R$<label id="lblPreco"></label><br>
+            </div>
         </div>
     </div>
 
