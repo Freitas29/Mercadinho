@@ -37,7 +37,6 @@
             </div>
     </div>
 
-
 </body>
 
     <script src="./libs/jquery/dist/jquery.min.js" ></script>
@@ -50,7 +49,7 @@ $(document).ready(function(){
 			$("#formLogin").submit(function(){
 				$.ajax({
 					type: 'post',
-					url: './controler/UsuarioDAO.php',
+					url: './model/UsuarioDAO.php',
 					data: {
 					nome  : $("input[name=txtDadosFunc]").val(),
 					senha :	$("input[name=txtSenhaFunc]").val()
