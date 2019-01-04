@@ -3,16 +3,23 @@ function gerarGrafico() {
         type: 'post',
         url: '../controler/graficos.php',
         success: function (retorno) {
-            alert(retorno);
+            //Separando os JSON para dois arrays 
+            var sep = retorno.split("]");
+            //Pegando os arrays e add a chave que foi retirada
+            nomC = sep[0]+"]";
+            qtdC = sep[1]+"]";
+            
             //Transformando o json em objeto
-            var obj = JSON.parse(retorno);
-            console.log(obj);
+            var nomeP = JSON.parse(nomC);
+            var qtdP = JSON.parse(qtdC);
+            
             //Transformando em array
-            const nomeProduto = Object.keys(obj).map(i => obj[i]);
+            const nomeProduto = Object.keys(nomeP).map(i => nomeP[i]);
+            const qtdProduto = Object.keys(qtdP).map(i => qtdP[i]);
             //Pegando o canvas
             let primeiroGrafico = document.getElementById('grafico').getContext('2d');
             var produtos = nomeProduto;
-            var resultadoVendas = [50, 30, 25]
+            var resultadoVendas = qtdP;
             //Instânciando o objeto e escolhendo o tipo
             let vendas = new Chart(grafico, {
                 type: 'bar',

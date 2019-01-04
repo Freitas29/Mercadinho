@@ -6,9 +6,14 @@ $vendas = new Vendas();
 
 
 $qtdVendas = $vendas->qtdVendidos();
-$linhas = array();
+$p = array();
+$qtd = array();
 foreach($qtdVendas as $v){
-    array_push($linhas,$v['nome']);
+    array_push($p,$v['nome']);
+    array_push($qtd,$v['qtdVendidos']);
 }
-echo json_encode($linhas);
+$produtos = json_encode($p);
+$quantidade = json_encode($qtd);
+echo $produtos;
+echo $quantidade;
 ?>
