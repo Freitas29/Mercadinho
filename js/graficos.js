@@ -21,11 +21,12 @@ function gerarGrafico() {
             var produtos = nomeProduto;
             var resultadoVendas = qtdP;
 
-            var cores;
+            var cores = [];
             
             for(i = 0; i <= produtos.length;i++){
-                cores = gera_cor();
+                cores[i] = gera_cor();
             }
+            
             //Instânciando o objeto e escolhendo o tipo
             let vendas = new Chart(grafico, {
                 type: 'horizontalBar',
