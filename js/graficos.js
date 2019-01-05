@@ -29,7 +29,7 @@ function gerarGrafico() {
             
             //Instânciando o objeto e escolhendo o tipo
             let vendas = new Chart(grafico, {
-                type: 'horizontalBar',
+                type: 'bar',
                 
                 data: {
                     labels: produtos,
@@ -46,6 +46,9 @@ function gerarGrafico() {
                     ]
                 },
                 options: {
+                    animation: {
+                        easing: "linear",
+                    },
                     tooltips: {
                         mode: 'index',
                         intersect: false,
@@ -70,7 +73,15 @@ function gerarGrafico() {
     return false;
 }
 
-gerarGrafico();
+
+
+$(document).ready(function(){
+    gerarGrafico();   
+    $("#loading").fadeOut(3000);
+});
+
+
+
 
 function gera_cor(){
     var hexadecimais = '0123456789ABCDEF';

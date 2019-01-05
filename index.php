@@ -30,10 +30,9 @@
 
     <div class="container-fluid" id="loading" style="position:absolute;z-index:999;background-color:#fff;width:100%;min-height:100%;height:auto;top:0;">
             <div class="row justify-content-center align-items-center">
-                    <img class="img-fluid mr-5" src="./img/logo.png">
-                    <div style="position:relative;top:120px;left:-140px;">
-                    <i class="fas fa-spinner fa-spin fa-2x" id="iconLoad"></i>
-                    </div>
+                   
+                    <img class="img-fluid mr-5 mt-5" src="./img/gifLoad.gif">
+                    
             </div>
     </div>
 

@@ -42,10 +42,8 @@
     <!-- Quando a página está carregando -->
      <div class="container-fluid" id="loading" style="position:absolute;z-index:999;background-color:#fff;width:100%;min-height:100%;height:auto;top:0;">
             <div class="row justify-content-center align-items-center">
-                    <img class="img-fluid mr-5" src="../img/logo.png">
-                    <div style="position:relative;top:120px;left:-140px;">
-                    <i class="fas fa-spinner fa-spin fa-2x" id="iconLoad"></i>
-                    </div>
+                    <img class="img-fluid mr-5" src="../img/gifLoad.gif">
+                    
             </div>
     </div>
 
@@ -54,7 +52,7 @@
         <div class="jumbotron mt-2">
             <div class="row">
                 <form class="form-group col-md-12" id="formCodigo">
-                    <input class="form-control col-md-6 mr-3 ml-auto" autofocus placeholder="Informe o código" id="txtCodigo" name="txtCodigo" pattern="[0-9]" title="Informe apenas números">
+                    <input class="form-control col-md-6 mr-3 ml-auto" autofocus placeholder="Informe o código" id="txtCodigo" name="txtCodigo" title="Informe apenas números">
                     <button class="btn btn-primary float-right mr-3 mt-2">Inserir</button>
                 </form>
             </div>

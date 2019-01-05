@@ -21,6 +21,9 @@ session_start();
                 <li class="nav-item">
                     <a class="nav-link" href="./cadastraProduto.php">CADASTRAR PRODUTO</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./graficos.php">VER VENDAS</a>
+                </li>
             </ul>
 
             <ul class="navbar-nav ml-auto">
