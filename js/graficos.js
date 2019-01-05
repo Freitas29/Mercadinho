@@ -20,6 +20,12 @@ function gerarGrafico() {
             let primeiroGrafico = document.getElementById('grafico').getContext('2d');
             var produtos = nomeProduto;
             var resultadoVendas = qtdP;
+
+            var cores;
+            
+            for(i = 0; i <= produtos.length;i++){
+                cores = gera_cor();
+            }
             //Instânciando o objeto e escolhendo o tipo
             let vendas = new Chart(grafico, {
                 type: 'horizontalBar',
@@ -32,22 +38,8 @@ function gerarGrafico() {
                         {
                             label: 'Vendas',
                             data: resultadoVendas,
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255,99,132,1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
+                            backgroundColor:cores,
+                            borderColor: cores,
 
                         }
                     ]
@@ -84,7 +76,7 @@ function gera_cor(){
     var cor = '#';
   
     // Pega um número aleatório no array acima
-    for (var i = 0; i < 1000; i++ ) {
+    for (var i = 0; i < 4; i++ ) {
     //E concatena à variável cor
         cor += hexadecimais[Math.floor(Math.random() * 16)];
     }
